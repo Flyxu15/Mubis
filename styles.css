@@ -1,9 +1,11 @@
 body {
-    background-image: url('acheron.webp'); /* Ruta relativa a la imagen en tu repositorio de GitHub */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeVDfzzrenb1coik3fenY4GjpCF_0dqFgsJV1sTzRzNA&s'); /* Ruta relativa a la imagen en tu repositorio de GitHub */
     background-size: cover; /* Ajusta la imagen al tamaño del viewport */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center; /* Centra la imagen en la ventana */
     margin-bottom: 30px; 
+    font-family: "Times New Roman", sans-serif; /* Primero se intentará con Arial y luego con la fuente sans-serif genérica */
+
 
 }
 
