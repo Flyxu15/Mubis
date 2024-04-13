@@ -1,5 +1,5 @@
 body {
-    background-image: url('Img/acheron.webp');
+    background-image: url('acheron.webp');
     background-size: cover; /* Ajusta la imagen al tamaño del viewport */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
