@@ -38,6 +38,26 @@ body {
     text-decoration-style: dotted;
 }
 
+.custom-gray-row2 {
+    background-color: #585825fc;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #a1b6b8;
+    text-decoration-style: dotted;
+}
+
+.custom-gray-row3 {
+    background-color: #808000;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b5cbc5;
+    
+}
+
 .custom-gray-image {
     max-width: 30px;
     margin-left: 30px;
@@ -51,9 +71,10 @@ body {
 }
 
 .custom-link a {
-    text-decoration: none;
+    text-decoration:solid;
     margin-right: 20px;
-    color: #096160;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .custom-section {
@@ -95,6 +116,31 @@ body {
     margin-right: 20px; /* Añade margen derecho para separar las imágenes */
 }
 
+.bigger-custom-section2 {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 25px;
+    margin-right: 20px; /* Añade margen derecho para separar las imágenes */
+    background-size: cover;
+    
+}
+
+.bigger-custom-section3 {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 25px;
+    margin-left: 105px;
+    background-size: cover;
+
+    
+}
+
 .smaller-custom-section {
     width: 400px;
     height: 250px;
@@ -117,6 +163,7 @@ body {
     text-align: left;
     margin-left: 20px;
 }
+
 
 .image-container {
     margin-top: 10px;
@@ -147,4 +194,78 @@ body {
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una línea */
     justify-content: space-between; /* Distribuye las imágenes horizontalmente */
     margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.btn {
+    background-color: #1e9fd25a; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 5px 15px; /* Espacio interno del botón */
+    text-align: center; /* Centrar el texto */
+    text-decoration: none; /* Quitar subrayado */
+    display: inline-block; /* Mostrar en línea */
+    font-size: 12px; /* Tamaño de fuente */
+    margin-right: 1px; /* Margen derecho entre botones */
+    margin-bottom: -15px; /* Margen inferior entre botones */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    
+}
+
+/* Estilos para el efecto hover del botón */
+.btn:hover {
+    background-color: #6b6b00; /* Cambiar color de fondo al pasar el mouse */
+}
+
+
+
+.custom-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.custom-links .custom-link {
+    flex-basis: 48%; /* Ajusta el ancho de cada imagen */
+    margin-bottom: 10px; /* Ajusta el espacio entre las imágenes */
+}
+
+.custom-links .custom-link img {
+    width: 100%; /* Ajusta el tamaño de las imágenes para llenar su contenedor */
+}
+
+.custom-container {
+    display: flex;
+}
+
+.custom-sidebar {
+    width: 33%;
+    padding: 20px;
+    background-color: #11bfea67;
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 0 500px rgba(0, 0, 0, 0.1); /* Sombra */
+
+}
+
+.custom-content {
+    width: 66%;
+    padding: 20px;
+}
+
+.custom-sidebar img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.top-heading {
+    text-align: center; /* Para centrar el texto */
+    font-size: 24px; /* Para hacer el texto más grande, ajusta el tamaño según lo necesites */
+    margin-bottom: 20px; /* Para agregar espacio debajo del texto */
+    margin-left: 180px;
+    color: #11beea;
+}
+
+.imagen {
+    width: 200px; /* Ancho de la imagen */
+    height: 150px; /* Alto de la imagen */
 }
