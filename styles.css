@@ -1,7 +1,15 @@
 body {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGGtzO3dI4HN47rNbRDJiMYuo4MEiBCvAftSkMBzxQHA&s');
-    background-size: cover; /* Ajusta la imagen al tamaño del viewport */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-color: #ffffff; /* Color de fondo */
+}
+
+#background-img {
+    position: fixed; /* Fija la imagen en la ventana del navegador */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cubre todo el ancho de la ventana */
+    height: 100%; /* Cubre todo el alto de la ventana */
+    z-index: -1; /* Coloca la imagen detrás de todo el contenido */
+    object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
 }
 
 .custom-gray-row {
