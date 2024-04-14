@@ -49,7 +49,7 @@ body {
 }
 
 .custom-gray-row3 {
-    background-color: #808000;
+    background-color: #0e332c;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -113,7 +113,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 25px;
-    margin-right: 20px; /* Añade margen derecho para separar las imágenes */
+    margin-right: 20px; 
+    background-size: cover;
+
 }
 
 .bigger-custom-section2 {
@@ -123,23 +125,13 @@ body {
     flex-direction: column;
     align-items: flex-start;
     border-radius: 25px;
-    margin-right: 20px; /* Añade margen derecho para separar las imágenes */
+    margin-right: 20px; 
     background-size: cover;
+    position: relative; /* Establece el posicionamiento relativo */
+    overflow: hidden;
     
 }
 
-.bigger-custom-section3 {
-    width: 200px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 25px;
-    margin-left: 105px;
-    background-size: cover;
-
-    
-}
 
 .smaller-custom-section {
     width: 400px;
@@ -235,8 +227,11 @@ body {
 }
 
 .custom-container {
-    display: flex;
+    display: flex;    
+
 }
+
+
 
 .custom-sidebar {
     width: 33%;
@@ -269,3 +264,43 @@ body {
     width: 200px; /* Ancho de la imagen */
     height: 150px; /* Alto de la imagen */
 }
+
+
+.card-title {
+    opacity: 0; /* Oculta el texto por defecto */
+    transition: opacity 0.3s ease; /* Agrega una transición suave */
+}
+
+.bigger-custom-section2:hover .card-title {
+    opacity: 1; /* Muestra el texto cuando se pasa el mouse por encima */
+}
+
+/* Agrega un efecto de transición al brillo de la imagen */
+.bigger-custom-section2 img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease; /* Transición de 0.5 segundos */
+}
+
+/* Cuando se pasa el mouse sobre el título, reduce el brillo de la imagen */
+.bigger-custom-section2 .card-title:hover ~ img {
+    filter: brightness(80%); /* Reduce el brillo al 80% */
+}
+
+.bigger-custom-section2 .card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    padding: 10px;
+    margin: 0;
+    color: white;
+    opacity: 0; /* Inicialmente transparente */
+    transition: opacity 0.5s ease; /* Transición de opacidad */
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+
