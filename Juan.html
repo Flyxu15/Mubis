@@ -4,6 +4,7 @@
     <title>JUAN SEEN</title>
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ff8cc1e920.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -102,8 +103,59 @@
                 </div>
 
             </div>
-            
-        </div>
+        <br>
+            <div class="container">
+                <div class="musicplayer">
+                <nav>
+                    <div class="circle">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="circle" id="playlistBtn" onclick="togglePlaylist()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </nav>
+                <img src="acheron.webp" class="song-img">
+                <h1>Songs</h1>
+                <p>*Hope you like it :D <br> click en >> Hay 3 canciones</p>
+
+                <audio  id="song">
+                    <source src="Bye.mp3" type="audio/mpeg">
+                    <source src="do.mp3" type="audio/mpeg">
+                    <source src="usse.mp3" type="audio/mpeg">
+
+                </audio>
+                
+                <div id="playlist" class="playlist">
+                    <ul>
+                        <li><a href="Bye.mp3" onclick="changeSong(0)">Bye Bye Bye</a></li>
+                        <li><a href="do.mp3" onclick="changeSong(1)">Unravel</a></li>
+                        <li><a href="usse.mp3" onclick="changeSong(2)">El ussewaa del sekai</a></li>
+                        <!-- Agrega más canciones si es necesario -->
+                    </ul>
+                </div>
+
+                <input type="range" value="0" id="progress">
+                <input type="range" min="0" max="10" value="5" id="volumeSlider" oninput="changeVolume()">
+
+
+                <div class="controls">
+                        <div onclick="previousSong()"><i class="fa-solid fa-backward"></i></div>
+                        <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                        <div onclick="nextSong()"><i class="fa-solid fa-forward"></i></div>
+                    </div>
+
+                    <h2 id="song"></h2>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+                </div>
+
     
             <div class="custom-content">
 
@@ -248,6 +300,104 @@
             <!-- Contenido principal -->
                     </div>
     </div>
+
+<script>
+
+let progress = document.getElementById("progress");
+let song = document.getElementById("song");
+let currentSongIndex = 0;
+let ctrlIcon = document.getElementById("ctrlIcon");
+let songList = ["Bye.mp3", "do.mp3", "usse.mp3" /* Agrega más nombres de archivo para las nuevas canciones */];
+
+song.onloadedmetadata = function(){
+    progress.max= song.duration;
+    progress.value= song.currentTime;
+
+}
+
+function playPause(){
+    if(ctrlIcon.classList.contains("fa-pause")){
+        song.pause();
+        ctrlIcon.classList.remove("fa-pause");
+        ctrlIcon.classList.add("fa-play");
+    } else {
+        song.src = songList[currentSongIndex];
+        song.play();
+        ctrlIcon.classList.add("fa-pause");
+        ctrlIcon.classList.remove("fa-play");
+        document.getElementById("songTitle").innerText = getSongName(song.src); // Mostrar el nombre de la canción
+    }
+}
+
+if(song.play()){
+    setInterval(() => {
+        progress.value = song.currentTime
+    }, 300);
+}
+
+progress.onchange = function(){
+    song.play();
+    song.currentTime = progress.value;
+
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+
+}
+
+function getSongName(songSrc) {
+    // Obtener solo el nombre del archivo de la ruta de la canción
+    let pathComponents = songSrc.split("/");
+    let filename = pathComponents[pathComponents.length - 1];
+    // Eliminar la extensión del archivo
+    let songName = filename.split(".")[0];
+    return songName;
+}
+
+function nextSong() {
+    currentSongIndex = (currentSongIndex + 1) % songList.length;
+    song.src = songList[currentSongIndex];
+    song.play();
+    document.getElementById("songTitle").innerText = getSongName(song.src); // Mostrar el nombre de la nueva canción
+}
+
+function previousSong() {
+    currentSongIndex = (currentSongIndex - 1 + songList.length) % songList.length;
+    song.src = songList[currentSongIndex];
+    song.play();
+    document.getElementById("songTitle").innerText = getSongName(song.src); // Mostrar el nombre de la nueva canción
+}
+
+// Función para cambiar el volumen
+function changeVolume() {
+    let volume = parseFloat(volumeSlider.value) / 10;
+    song.volume = volume;
+}
+
+// Función para silenciar/desilenciar
+function toggleMute() {
+    if (song.volume === 0) {
+        // Si está silenciado, restaurar el volumen al valor anterior
+        song.volume = parseFloat(volumeSlider.value) / 10;
+        volumeSlider.value = song.volume * 1;
+    } else {
+        // Si no está silenciado, silenciar
+        song.volume = 0;
+        volumeSlider.value = 0;
+    }
+}
+
+let playlist = document.getElementById("playlist");
+let playlistBtn = document.getElementById("playlistBtn");
+
+function togglePlaylist() {
+    if (playlist.classList.contains("open")) {
+        playlist.classList.remove("open");
+    } else {
+        playlist.classList.add("open");
+    }
+}
+
+</script>
 
 
 
