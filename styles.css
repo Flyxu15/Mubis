@@ -329,6 +329,7 @@ background: #ffe0e5;
 width: 400px;
 padding: 25px 35px;
 text-align: center;
+border-radius: 5%;
 
 }
 
@@ -376,6 +377,7 @@ nav .circle{
     border-radius: 4px;
     cursor: pointer;
     margin: 40px 0;
+    margin-top: 8px;
 
 
 }
@@ -418,25 +420,113 @@ nav .circle{
 
 }
 
-.playlist {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 200px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: none;
+
+
+#currentTime,
+#duration {
+    color: #000000; /* Cambiar el color del texto */
+    font-size: 20px; /* Cambiar el tamaño de la fuente */
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Cambiar la fuente */
 }
 
-.playlist.open {
+#timeSeparator {
+    margin: 0 5px; /* Agregar un margen entre el tiempo actual y la duración */
+}
+
+#currentTimeIcon,
+#durationIcon {
+    margin-right: 5px; /* Ajustar el margen entre el icono y el tiempo */
+}
+
+
+
+
+
+#volumeSlider {
+    width: 100px; /* Ancho personalizado */
+    height: 10px;
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+    appearance: none;
+    background: #f53192; /* Color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Elimina el contorno */
+    transition: background 0.2s;
+    margin-top: -20px;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+    appearance: none;
+    width: 20px; /* Tamaño del pulgar */
+    height: 20px;
+    background: #540e31; /* Color del pulgar */
+    border-radius: 50%; /* Forma circular */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 15px; /* Tamaño del pulgar para Firefox */
+    height: 15px;
+    background: #daf48a; /* Color del pulgar para Firefox */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* Estilos para el botón de la lista de reproducción */
+.playlist-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.playlist-popup {
+        display: none;
+        position: absolute;
+        top: 102%; /* Ajusta esta distancia según sea necesario */
+        left: 26%;
+        z-index: 1; /* Asegura que esté por encima de otros elementos */
+        background-color: #ab9f9f;
+        width: 200px; /* Ajusta el ancho según sea necesario */
+        max-height: 120px; /* Ajusta la altura máxima según sea necesario */
+        overflow-y: auto; /* Permite desplazamiento vertical si el contenido supera la altura máxima */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border: 1px solid #d45dbc;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fefefe;
+    }
+
+.playlist-content {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.playlist-item {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.playlist-item:hover {
+    background-color: #892b2b;
+}
+
+.song {
+    cursor: pointer;
+    padding: 8px 16px;
     display: block;
 }
 
-.playlist {
-    display: none;
+.song:hover {
+    background-color: #c552c3;
+    color: #ffffff;
 }
-
-
 
